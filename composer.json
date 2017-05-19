@@ -1,0 +1,21 @@
+{
+  "name" : "studioraz/magento2-category-image",
+  "description" : "Magento 2 module to add extra category images",
+  "type" : "magento2-module",
+  "prefer-stable": true,
+  "version" : "0.0.1",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "SR\\CategoryImage\\": ""
+    }
+  },
+  "support": {
+    "email": "support@studioraz.co.il",
+    "wiki": "http://www.studio-raz.com"
+  }
+}

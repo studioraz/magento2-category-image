@@ -1,0 +1,26 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Category image template
+ *
+ * @var $block \SR\CategoryImage\Block\Image
+ */
+?>
+<?php
+$_helper    = $this->helper('Magento\Catalog\Helper\Output');
+$_category = $block->getCurrentCategory();
+$_imgHtml   = '';
+if ($_imgUrl = $block->getImageUrl()) {
+    $_imgHtml = '<div class="' . $block->getCssClass() . '"><img src="' . $_imgUrl . '" alt="' . $block->escapeHtml($_category->getName()) . '" title="' . $block->escapeHtml($_category->getName()) . '"/></div>';
+    $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
+    /* @escapeNotVerified */ echo $_imgHtml;
+}
+?>
