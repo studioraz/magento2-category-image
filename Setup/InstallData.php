@@ -32,7 +32,7 @@ class InstallData implements InstallDataInterface
 
             $eavSetup->addAttribute(
                 \Magento\Catalog\Model\Category::ENTITY,
-                'thumbnail', [
+                \SR\CategoryImage\Controller\Adminhtml\Category\Thumbnail\Upload::CATEGORY_ATTRIBUTE_IMAGE_THUMBNAIL, [
                     'type' => 'varchar',
                     'label' => 'Thumbnail',
                     'input' => 'image',

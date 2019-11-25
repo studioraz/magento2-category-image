@@ -1,18 +1,15 @@
 <?php
-/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-namespace SR\CategoryImage\Controller\Adminhtml\Category\Thumbnail;
+namespace SR\CategoryImage\Controller\Adminhtml\Category\Mobile;
 
 use Magento\Framework\Controller\ResultFactory;
+use Magento\Catalog\Controller\Adminhtml\Category\Image\Upload as BaseUpload;
 
 /**
  * Class Upload
  */
-class Upload extends \Magento\Catalog\Controller\Adminhtml\Category\Image\Upload
+class Upload extends BaseUpload
 {
-    const CATEGORY_ATTRIBUTE_IMAGE_THUMBNAIL = 'thumbnail';
+    const CATEGORY_ATTRIBUTE_IMAGE_MOBILE = 'image_mobile';
 
     /**
      * Upload file controller action
@@ -22,7 +19,7 @@ class Upload extends \Magento\Catalog\Controller\Adminhtml\Category\Image\Upload
     public function execute()
     {
         try {
-            $result = $this->imageUploader->saveFileToTmpDir('thumbnail');
+            $result = $this->imageUploader->saveFileToTmpDir(self::CATEGORY_ATTRIBUTE_IMAGE_MOBILE);
 
             $result['cookie'] = [
                 'name' => $this->_getSession()->getName(),

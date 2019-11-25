@@ -2,29 +2,56 @@
 
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
-
-
     <fieldset name="content">
-
-
-        <field name="thumbnail">
+        <field name="thumbnail" sortOrder="41" formElement="fileUploader">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="dataType" xsi:type="string">string</item>
                     <item name="source" xsi:type="string">category</item>
-                    <item name="label" xsi:type="string" translate="true">Thumbnail</item>
-                    <item name="visible" xsi:type="boolean">true</item>
-                    <item name="formElement" xsi:type="string">fileUploader</item>
-                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
-                    <item name="previewTmpl" xsi:type="string">Magento_Catalog/image-preview</item>
-                    <item name="required" xsi:type="boolean">false</item>
-                    <item name="sortOrder" xsi:type="number">41</item>
-                    <item name="uploaderConfig" xsi:type="array">
-                        <item name="url" xsi:type="url" path="categoryimage/category_thumbnail/upload"/>
-                    </item>
                 </item>
             </argument>
+            <settings>
+                <elementTmpl>ui/form/element/uploader/uploader</elementTmpl>
+                <dataType>string</dataType>
+                <label translate="true">Thumbnail</label>
+                <visible>true</visible>
+                <required>false</required>
+            </settings>
+            <formElements>
+                <fileUploader>
+                    <settings>
+                        <required>false</required>
+                        <uploaderConfig>
+                            <param xsi:type="url" name="url" path="categoryimage/category_thumbnail/upload"/>
+                        </uploaderConfig>
+                        <previewTmpl>Magento_Catalog/image-preview</previewTmpl>
+                    </settings>
+                </fileUploader>
+            </formElements>
         </field>
-
+        <field name="image_mobile" sortOrder="45" formElement="fileUploader">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">category</item>
+                </item>
+            </argument>
+            <settings>
+                <elementTmpl>ui/form/element/uploader/uploader</elementTmpl>
+                <dataType>string</dataType>
+                <label translate="true">Category Image Mobile</label>
+                <visible>true</visible>
+                <required>false</required>
+            </settings>
+            <formElements>
+                <fileUploader>
+                    <settings>
+                        <required>false</required>
+                        <uploaderConfig>
+                            <param xsi:type="url" name="url" path="categoryimage/category_mobile/upload"/>
+                        </uploaderConfig>
+                        <previewTmpl>Magento_Catalog/image-preview</previewTmpl>
+                    </settings>
+                </fileUploader>
+            </formElements>
+        </field>
     </fieldset>
 </form>

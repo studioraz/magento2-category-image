@@ -16,4 +16,9 @@
         </arguments>
     </type>
 
+    <type name="SR\CategoryImage\Controller\Adminhtml\Category\Mobile\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Magento\Catalog\CategoryImageUpload</argument>
+        </arguments>
+    </type>
 </config>
