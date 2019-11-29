@@ -53,7 +53,7 @@ class UpgradeData implements UpgradeDataInterface
 
         $eavSetup->addAttribute(
             \Magento\Catalog\Model\Category::ENTITY,
-            \SR\CategoryImage\Controller\Adminhtml\Category\Mobile\Upload::CATEGORY_ATTRIBUTE_IMAGE_MOBILE,
+            \SR\CategoryImage\Controller\Adminhtml\Category\Mobile\Upload::CATEGORY_ATTRIBUTE_IMAGE,
             [
                 'type' => 'varchar',
                 'label' => 'Category Image Mobile',

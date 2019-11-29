@@ -1,15 +1,6 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-
-    <!-- override controller to handle extra category image fields -->
-    <preference for="Magento\Catalog\Controller\Adminhtml\Category\Save"
-                type="SR\CategoryImage\Controller\Adminhtml\Category\Save"/>
-
-    <!-- override data provider to handle extra category image fields -->
-    <preference for="Magento\Catalog\Model\Category\DataProvider"
-                type="SR\CategoryImage\Model\Category\DataProvider"/>
-
     <type name="SR\CategoryImage\Controller\Adminhtml\Category\Thumbnail\Upload">
         <arguments>
             <argument name="imageUploader" xsi:type="object">Magento\Catalog\CategoryImageUpload</argument>
@@ -20,5 +11,13 @@
         <arguments>
             <argument name="imageUploader" xsi:type="object">Magento\Catalog\CategoryImageUpload</argument>
         </arguments>
+    </type>
+
+    <type name="Magento\Catalog\Controller\Adminhtml\Category\Save">
+        <plugin name="sr_image_preprocessing" type="SR\CategoryImage\Plugin\Catalog\Controller\Adminhtml\Category\SavePlugin" />
+    </type>
+
+    <type name="Magento\Catalog\Model\Category\DataProvider">
+        <plugin name="sr_category_data_provider" type="SR\CategoryImage\Plugin\Catalog\Model\Category\DataProviderPlugin" />
     </type>
 </config>
