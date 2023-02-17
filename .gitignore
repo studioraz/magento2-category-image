@@ -1,0 +1,28 @@
+#--------------------------#
+# IDE Project Files/Folder #
+#--------------------------#
+/nbproject/
+/.idea/
+
+#--------------------------#
+# NGinx Specific Ignores   #
+#--------------------------#
+50x.html
+404.html
+
+#--------------------------#
+# XDebug Extension         #
+#--------------------------#
+remote_log
+
+#--------------------------#
+# Global Files Types       #
+#--------------------------#
+.svn*
+*.bkp
+*.old
+*.swm
+*.swn
+*.swp
+*.swo
+.DS_Store

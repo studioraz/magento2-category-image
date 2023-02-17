@@ -28,8 +28,8 @@ class Category extends AbstractHelper
         if ($image) {
             if (is_string($image)) {
                 $url = $this->_urlBuilder->getBaseUrl(
-                        ['_type' => \Magento\Framework\UrlInterface::URL_TYPE_MEDIA]
-                    ) . 'catalog/category/' . $image;
+                        ['_type' => \Magento\Framework\UrlInterface::URL_TYPE_WEB]
+                    ) .  $image;
             } else {
                 throw new \Magento\Framework\Exception\LocalizedException(
                     __('Something went wrong while getting the image url.')
