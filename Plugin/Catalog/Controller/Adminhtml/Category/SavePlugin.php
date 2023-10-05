@@ -21,6 +21,9 @@ class SavePlugin
                 unset($data[$imageType]);
                 $data[$imageType]['delete'] = true;
             }
+            if (isset($data[$imageType]) && isset($data[$imageType][0]) && isset($data[$imageType][0]['url'])) {
+                $data[$imageType][0]['url'] = str_replace('//media/', '/media/', $data[$imageType][0]['url']);
+            }
         }
 
         return [$data];
