@@ -19,7 +19,7 @@ $_helper    = $this->helper('Magento\Catalog\Helper\Output');
 $_category = $block->getCurrentCategory();
 $_imgHtml   = '';
 if ($_imgUrl = $block->getImageUrl()) {
-    $_imgHtml = '<div class="' . $block->getCssClass() . '"><img src="' . $_imgUrl . '" alt="' . $block->escapeHtml($_category->getName()) . '" title="' . $block->escapeHtml($_category->getName()) . '"/></div>';
+    $_imgHtml = '<div class="' . $block->getCssClass() . '"><img src="' . $_imgUrl . '" alt="' . $block->escapeHtml($_category->getName()) . '" title="' . $block->escapeHtml($_category->getName()) . '" loading="lazy" /></div>';
     $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
     /* @escapeNotVerified */ echo $_imgHtml;
 }
