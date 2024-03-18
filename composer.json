@@ -3,7 +3,7 @@
   "description" : "Magento 2 module to add extra category images",
   "type" : "magento2-module",
   "prefer-stable": true,
-  "version" : "0.0.4",
+  "version" : "1.0.0",
   "license": [
     "OSL-3.0",
     "AFL-3.0"
