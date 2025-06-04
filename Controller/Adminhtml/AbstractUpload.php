@@ -98,7 +98,7 @@ abstract class AbstractUpload extends Action
      */
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('SR_CategoryImage::category');
+        return $this->_authorization->isAllowed('Magento_Catalog::categories');
     }
 
     /**
